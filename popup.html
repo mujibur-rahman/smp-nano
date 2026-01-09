@@ -1,0 +1,51 @@
+<!doctype html>
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body>
+    <h3>SMP Nano</h3>
+
+    <div class="muted" id="siteLine">Site: …</div>
+
+    <label>Master secret (not stored)</label>
+    <input id="master" type="password" autocomplete="off" />
+
+    <div class="row">
+      <div>
+        <label>Username (optional)</label>
+        <input id="user" autocomplete="off" />
+      </div>
+      <div>
+        <label>Counter</label>
+        <input id="ctr" type="number" min="1" value="1" />
+      </div>
+    </div>
+
+    <div class="row">
+      <div>
+        <label>Length</label>
+        <input id="len" type="number" min="12" max="64" value="20" />
+      </div>
+      <div>
+        <label>Mode</label>
+        <select id="mode">
+          <option value="base64url" selected>base64url</option>
+          <option value="alnumsym">alnum+sym</option>
+        </select>
+      </div>
+    </div>
+
+    <button id="gen">Generate</button>
+
+    <pre id="out" class="out"></pre>
+
+    <div class="row">
+      <button id="copy" disabled>Copy</button>
+      <button id="fill" disabled>Fill</button>
+    </div>
+
+    <script src="popup.js"></script>
+  </body>
+</html>
